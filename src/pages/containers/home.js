@@ -48,7 +48,14 @@ class Home extends Component{
   render() {
     return (
       <HomeLayout>
-        
+        <Paginator
+          text={ "Anterior" }
+          handleClick={ this.previousLink }
+        />
+        <Paginator
+          text={ "Anterior" }
+          handleClick={ this.nextLink }
+        />
         <Spells spells={this.state.spells} />
 
       </HomeLayout>
