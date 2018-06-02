@@ -1,0 +1,44 @@
+.Pager {
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: center;
+  list-style: none;
+}
+.Pager li {
+  display: inline;
+  text-decoration: none;
+}
+.Pager li > a,
+.Pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  text-decoration: none;
+}
+.Pager li > a:hover,
+.Pager li > a:focus {
+  text-decoration: none;
+
+}
+.Pager .next > a,
+.Pager .next > span {
+  float: right;
+}
+.Pager .previous > a,
+.Pager .previous > span {
+  float: left;
+}
+.Pager .disabled > a,
+.Pager .disabled > a:hover,
+.Pager .disabled > a:focus,
+.Pager .disabled > span {
+  color: #777;
+  cursor: not-allowed;
+
+}
+
+nav{
+  display: block;
+}
