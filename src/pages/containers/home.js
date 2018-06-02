@@ -11,7 +11,7 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    fetch('http://hechizos.herokuapp.com/api/spells/?format=json')
+    fetch('https://hechizos.herokuapp.com/api/spells/?format=json')
       .then(response => response.json())
       .then(spells => {
         spells.forEach(spell => {
