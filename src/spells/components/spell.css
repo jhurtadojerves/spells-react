@@ -1,0 +1,47 @@
+.Spell {
+  padding: 1%;
+  margin: 0.1% 0;
+  width: 88%;
+  color: #ff6132;
+  background-color: #31333c;
+  text-decoration: none;
+}
+.Spell:hover {
+  background-color: #3b3e49;
+  transition: 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  transform: scale(1.1);
+  box-shadow: 5px 5px 92px -12px #000;
+}
+.Spell a {
+  text-decoration: none;
+}
+.Spell-detail {
+  padding: 1%;
+  margin: 0.1% 0;
+  width: 88%;
+  color: #ff6132;
+  background-color: #31333c;
+  text-decoration: none;
+}
+.Spell-title {
+  display: inline;
+  margin: 0.8%;
+}
+
+.Spell-title a {
+  color: #ff6132;
+  text-decoration: underline;
+}
+.Spell-type {
+  font-size: 80%;
+  background-color: #ff2554;
+  color: #fff;
+  padding: 0.2em;
+  border-radius: 5px;
+}
+.Spell-description {
+  color: #fff;
+  text-align: justify;
+  /*line-height: 24px;*/
+  text-shadow: 0 0 1px #fff;
+}
