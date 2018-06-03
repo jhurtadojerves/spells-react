@@ -11,7 +11,12 @@ class Home extends Component{
     next: ''
   }
 
-  componentWillMount() {
+  getData = () => {
+    this.setState(
+      {
+        spells: []
+      }
+    )
     fetch(this.state.link)
       .then(response => response.json())
       .then(spells => {
@@ -30,21 +35,27 @@ class Home extends Component{
             next: spells.next
           })
         })
+        console.log(this.spells)
       })
   }
+
   previousLink = () => {
     this.setState({
       spells: this.state.spells,
       link: this.state.previous,
     })
-    console.log('Anterior')
+    this.getData()
   }
   nextLink = () =>{
     this.setState({
       spells: this.state.spells,
       link: this.state.next,
     })
-    console.log('Siguiente')
+    this.getData()
+  }
+
+  componentDidMount() {
+    this.getData()
   }
 
   render() {
