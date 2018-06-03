@@ -37,12 +37,14 @@ class Home extends Component{
       spells: this.state.spells,
       link: this.state.previous,
     })
+    console.log('Anterior')
   }
   nextLink = () =>{
     this.setState({
       spells: this.state.spells,
       link: this.state.next,
     })
+    console.log('Siguiente')
   }
 
   render() {
@@ -53,7 +55,7 @@ class Home extends Component{
           handleClick={ this.previousLink }
         />
         <Paginator
-          text={ "Anterior" }
+          text={ "Siguiente" }
           handleClick={ this.nextLink }
         />
         <Spells spells={this.state.spells} />
