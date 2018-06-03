@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import HomeLayout from '../components/home-layout'
 import Spells from '../../spells/components/spells'
 import Paginator from '../../spells/components/paginator'
+import PaginatorLayout from '../../spells/components/paginator-layout'
+import Header from '../../header/components/header'
+import Footer from '../../footer/components/footer'
 
 class Home extends Component{
   state = {
@@ -35,7 +38,6 @@ class Home extends Component{
             next: spells.next
           })
         })
-        console.log(this.spells)
       })
   }
 
@@ -61,16 +63,43 @@ class Home extends Component{
   render() {
     return (
       <HomeLayout>
-        <Paginator
-          text={ "Anterior" }
-          handleClick={ this.previousLink }
-        />
-        <Paginator
-          text={ "Siguiente" }
-          handleClick={ this.nextLink }
-        />
-        <Spells spells={this.state.spells} />
+        <Header/>
+        <PaginatorLayout>
+          {
+            this.state.previous &&
+              <Paginator
+                text={ "Anterior" }
+                handleClick={ this.previousLink }
+              />
+          }
+          {
+            this.state.next &&
+              <Paginator
+                text={ "Siguiente" }
+                handleClick={ this.nextLink }
+              />
+          }
 
+        </PaginatorLayout>
+        <Spells spells={this.state.spells} />
+        <PaginatorLayout>
+          {
+            this.state.previous &&
+            <Paginator
+              text={ "Anterior" }
+              handleClick={ this.previousLink }
+            />
+          }
+          {
+            this.state.next &&
+            <Paginator
+              text={ "Siguiente" }
+              handleClick={ this.nextLink }
+            />
+          }
+
+        </PaginatorLayout>
+        <Footer/>
       </HomeLayout>
     )
   }

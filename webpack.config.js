@@ -19,14 +19,14 @@ module.exports = (env) => {
         entry: {
           "home": path.resolve(__dirname, 'src/entries/home.js'),
         },
-        output: {
+          output: {
             path: path.resolve(__dirname, 'dist'),
             //path: 'dist',
-            filename: 'js/[name].js',
+            filename: 'js/[name].[hash].js',
             //publicPath: path.resolve(__dirname, 'dist')+"/",
             publicPath: 'dist/',
-            chunkFilename: 'js/[id].js',
-        },
+            chunkFilename: 'js/[id].[chunkhash].js',
+          },
         devServer: {
             port: 9000,
         },

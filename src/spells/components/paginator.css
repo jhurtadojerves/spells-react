@@ -42,3 +42,11 @@
 nav{
   display: block;
 }
+
+.Pager-button {
+  background-color: #ff2554;
+  padding: 1em;
+  text-decoration: none;
+  color: #fff;
+  margin: 0 5px;
+}

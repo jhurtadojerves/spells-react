@@ -1,0 +1,15 @@
+.Footer {
+  max-width: 90%;
+  background-color: #31333c;
+  text-align: center;
+  padding: 1%;
+  font-size: 1em;
+  margin: 0 auto;
+}
+.Footer a {
+  text-decoration: none;
+  color: #ff6132;
+}
+.Footer-heart{
+  color: red;
+}
