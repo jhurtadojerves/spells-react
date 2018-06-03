@@ -11,13 +11,13 @@ class Home extends Component{
     next: ''
   }
 
-  getData = () => {
+  getData = link => {
     this.setState(
       {
         spells: []
       }
     )
-    fetch(this.state.link)
+    fetch(link)
       .then(response => response.json())
       .then(spells => {
         spells.results.forEach(spell => {
@@ -44,18 +44,18 @@ class Home extends Component{
       spells: this.state.spells,
       link: this.state.previous,
     })
-    this.getData()
+    this.getData(this.state.previous)
   }
   nextLink = () =>{
     this.setState({
       spells: this.state.spells,
       link: this.state.next,
     })
-    this.getData()
+    this.getData(this.state.next)
   }
 
   componentDidMount() {
-    this.getData()
+    this.getData(this.state.link)
   }
 
   render() {
