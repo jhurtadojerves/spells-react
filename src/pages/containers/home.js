@@ -5,13 +5,18 @@ import Paginator from '../../spells/components/paginator'
 import PaginatorLayout from '../../spells/components/paginator-layout'
 import Header from '../../header/components/header'
 import Footer from '../../footer/components/footer'
+import ModalContainer from '../../widgets/containers/modal'
+import Modal from '../../widgets/components/modal'
+import Spell from "../../widgets/components/spell";
+
 
 class Home extends Component{
   state = {
     spells: [],
     link: 'https://hechizos.herokuapp.com/api/spells/?format=json&page=1',
     previous: '',
-    next: ''
+    next: '',
+    modal: false,
   }
 
   getData = link => {
@@ -29,7 +34,8 @@ class Home extends Component{
             type: spell.type,
             method: spell.method,
             object: spell.object,
-            description: spell.description
+            description: spell.description,
+            url: spell.url
           }
           this.setState({
             spells: this.state.spells.concat([data]),
@@ -40,7 +46,6 @@ class Home extends Component{
         })
       })
   }
-
   previousLink = () => {
     this.setState({
       spells: this.state.spells,
@@ -54,6 +59,21 @@ class Home extends Component{
       link: this.state.next,
     })
     this.getData(this.state.next)
+  }
+  handleOpenModal =  spell  => {
+    this.setState({
+      spell: spell,
+      modal: true
+    })
+    document.body.style='overflow: hidden;'
+  }
+  handleCloseModal = event => {
+    this.setState(
+      {
+        modal: false,
+      }
+    )
+    document.body.style=''
   }
 
   componentDidMount() {
@@ -81,7 +101,10 @@ class Home extends Component{
           }
 
         </PaginatorLayout>
-        <Spells spells={this.state.spells} />
+        <Spells
+          handleOpenModal={ this.handleOpenModal }
+          spells={this.state.spells}
+        />
         <PaginatorLayout>
           {
             this.state.previous &&
@@ -100,6 +123,20 @@ class Home extends Component{
 
         </PaginatorLayout>
         <Footer/>
+
+        {
+          this.state.modal &&
+          <ModalContainer>
+            <Modal
+              handleClick = { this.handleCloseModal }
+            >
+              <Spell
+                {...this.state.spell }
+              />
+            </Modal>
+          </ModalContainer>
+        }
+
       </HomeLayout>
     )
   }

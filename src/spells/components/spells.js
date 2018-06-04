@@ -8,7 +8,10 @@ function Spells (props) {
       {
         props.spells.map(function(spell) {
           return(
-            <Spell {...spell} />
+            <Spell
+              {...spell}
+              handleOpenModal={ props.handleOpenModal }
+            />
           )
         })
       }

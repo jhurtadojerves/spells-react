@@ -1,0 +1,38 @@
+.ModalSpell a {
+  text-decoration: none;
+}
+
+.ModalSpell-detail {
+  padding: 1%;
+  margin: 0.1% 0;
+  width: 88%;
+  color: #000;
+  background-color: #31333c;
+  text-decoration: none;
+}
+.ModalSpell-title {
+  display: inline;
+  margin: 0.8%;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.ModalSpell-title a {
+
+}
+.ModalSpell-type {
+  font-size: 80%;
+  background-color: #a7a7a7;
+  color: #fff;
+  padding: 0.2em;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.ModalSpell-description {
+  color: #000;
+  text-align: justify;
+  /*line-height: 24px;*/
+  text-shadow: 0 0 1px #fff;
+  white-space: pre-line;
+}

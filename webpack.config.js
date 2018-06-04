@@ -22,7 +22,8 @@ module.exports = (env) => {
           output: {
             path: path.resolve(__dirname, 'dist'),
             //path: 'dist',
-            filename: 'js/[name].[hash].js',
+            //filename: 'js/[name].[hash].js',
+            filename: 'js/[name].js',
             //publicPath: path.resolve(__dirname, 'dist')+"/",
             publicPath: 'dist/',
             chunkFilename: 'js/[id].[chunkhash].js',
